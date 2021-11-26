@@ -1,15 +1,27 @@
 import "./styles.scss";
 
-function Input({ title }) {
+function Input({
+  title,
+  value,
+  name,
+  onChange,
+  currenciesValue,
+  currenciesName,
+  onChangeCurrencies,
+}) {
   const currencies = ["BTC", "LTC", "ETH", "SHIBA"];
 
   return (
     <form>
       <label>
         <h3 className="crypto__input-title">{title}</h3>
-        <input type="number" />
+        <input type="number" value={value} onChange={onChange} name={name} />
       </label>
-      <select>
+      <select
+        value={currenciesValue}
+        name={currenciesName}
+        onChange={onChangeCurrencies}
+      >
         {currencies.map((currency, index) => (
           <option key={index}>{currency}</option>
         ))}
