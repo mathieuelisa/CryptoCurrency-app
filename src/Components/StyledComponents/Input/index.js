@@ -10,7 +10,19 @@ function Input({
   onChangeCurrencies,
   classNameInput,
 }) {
-  const currencies = ["BTC", "LTC", "ETH", "SHIBA"];
+  const currencies = [
+    "BTC",
+    "LTC",
+    "ETH",
+    "SHIB",
+    "SOL",
+    "ADA",
+    "DOGE",
+    "XMR",
+    "EUR",
+    "USD",
+    "JPY",
+  ];
 
   return (
     <form>

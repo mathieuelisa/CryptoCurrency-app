@@ -1,3 +1,8 @@
+// @font-face {
+//   font-family: "Gobold";
+//   src: url("../../Assets/Fonts/Gobold.otf");
+// }
+
 .crypto__container--currency {
   display: flex;
   flex-direction: column;
@@ -13,5 +18,23 @@
   &-input {
     height: 30px;
     width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #da0000;
+    color: whitesmoke;
+  }
+
+  select {
+    width: 69px;
+    text-align: center;
+    height: 20px;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none;
   }
 }
