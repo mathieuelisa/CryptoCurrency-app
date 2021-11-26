@@ -1,5 +1,13 @@
+import "./styles.scss";
+import Input from "../StyledComponents/Input";
+
 function CryptoCurrency() {
-  return <p style={{ color: "white" }}>TEST</p>;
+  return (
+    <div className="crypto__container--currency">
+      <Input title="PRIMARY CURRENCY" />
+      <Input title="SECONDARY CURRENCY" />
+    </div>
+  );
 }
 
 export default CryptoCurrency;
