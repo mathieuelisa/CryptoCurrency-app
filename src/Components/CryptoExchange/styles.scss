@@ -1,6 +1,8 @@
 .crypto__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 420px;
   width: 57%;
   background-color: grey;
-  //   color: #DA0000
 }

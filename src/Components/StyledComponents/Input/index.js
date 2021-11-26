@@ -8,6 +8,7 @@ function Input({
   currenciesValue,
   currenciesName,
   onChangeCurrencies,
+  classNameInput,
 }) {
   const currencies = ["BTC", "LTC", "ETH", "SHIBA"];
 
@@ -15,7 +16,13 @@ function Input({
     <form>
       <label>
         <h3 className="crypto__input-title">{title}</h3>
-        <input type="number" value={value} onChange={onChange} name={name} />
+        <input
+          type="number"
+          value={value}
+          onChange={onChange}
+          name={name}
+          className={classNameInput}
+        />
       </label>
       <select
         value={currenciesValue}

@@ -32,7 +32,7 @@ function CryptoCurrency() {
     });
   };
 
-  console.log(currency.firstCurrency);
+  console.log(currency);
   return (
     <div className="crypto__container--currency">
       <div className="crypto__container--currency-first">
@@ -44,6 +44,7 @@ function CryptoCurrency() {
           currenciesValue={currency.firstCurrency}
           currenciesName="firstCurrency"
           onChangeCurrencies={onChangeCurrencies}
+          classNameInput="crypto__container--currency-input"
         />
       </div>
 
@@ -53,6 +54,10 @@ function CryptoCurrency() {
           name="secondary"
           value={state.secondary}
           onChange={onChange}
+          currenciesValue={currency.secondCurrency}
+          currenciesName="secondCurrency"
+          onChangeCurrencies={onChangeCurrencies}
+          classNameInput="crypto__container--currency-input"
         />
       </div>
     </div>

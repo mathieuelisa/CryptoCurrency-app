@@ -1,7 +1,17 @@
-.crypto__container--currency-first {
+.crypto__container--currency {
   display: flex;
-}
+  flex-direction: column;
+  align-items: center;
+  &-first {
+    display: flex;
+  }
 
-.crypto__container--currency-second {
-  display: flex;
+  &-second {
+    display: flex;
+  }
+
+  &-input {
+    height: 30px;
+    width: 200px;
+  }
 }
