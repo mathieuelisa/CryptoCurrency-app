@@ -91,7 +91,14 @@ function CryptoCurrency() {
         />
       </div>
 
-      <button onClick={exchange}>Exchange</button>
+      <div className="crypto__container--currency-third">
+        <button
+          onClick={exchange}
+          className="crypto__container--currency-button"
+        >
+          Exchange
+        </button>
+      </div>
     </div>
   );
 }
