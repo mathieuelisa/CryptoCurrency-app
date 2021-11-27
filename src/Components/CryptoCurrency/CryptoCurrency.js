@@ -91,7 +91,7 @@ function CryptoCurrency() {
         />
       </div>
 
-      <button onClick={exchange}>convert</button>
+      <button onClick={exchange}>Exchange</button>
     </div>
   );
 }
