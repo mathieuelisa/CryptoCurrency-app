@@ -1,8 +1,14 @@
+// Import styles
 import "./styles.scss";
+// Import Components
 import Input from "../StyledComponents/Input";
+
 import { useState } from "react";
 
+import axios from "axios";
+
 function CryptoCurrency() {
+  // const [dataApi, setDataApi] = useState([]);
   const [state, setState] = useState({
     primary: "",
     secondary: "",
@@ -33,6 +39,30 @@ function CryptoCurrency() {
   };
 
   console.log(currency);
+
+  const exchange = () => {
+    var options = {
+      method: "GET",
+      url: "https://alpha-vantage.p.rapidapi.com/query",
+      params: {
+        to_currency: "JPY",
+        function: "CURRENCY_EXCHANGE_RATE",
+        from_currency: "USD",
+      },
+      headers: {
+        "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
+        "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
+      },
+    };
+
+    axios
+      .request(options)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="crypto__container--currency">
       <div className="crypto__container--currency-first">
@@ -60,6 +90,8 @@ function CryptoCurrency() {
           classNameInput="crypto__container--currency-input"
         />
       </div>
+
+      <button onClick={exchange}>convert</button>
     </div>
   );
 }
