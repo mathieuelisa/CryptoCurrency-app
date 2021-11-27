@@ -23,12 +23,15 @@
     background-color: transparent;
     border: 2px solid #da0000;
     color: whitesmoke;
+    font-family: "Gobold";
+    font-size: 0.9em;
   }
 
   select {
     width: 69px;
     text-align: center;
     height: 20px;
+    font-family: "Gobold";
     background-color: transparent;
     color: whitesmoke;
     border: none;
@@ -36,5 +39,12 @@
     -moz-appearance: none;
     appearance: none;
     -ms-appearance: none;
+  }
+
+  select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   }
 }

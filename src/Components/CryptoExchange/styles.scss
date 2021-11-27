@@ -5,4 +5,18 @@
   height: 420px;
   width: 57%;
   background-color: grey;
+
+  &--news {
+    color: whitesmoke;
+    text-align: end;
+    font-family: "Gobold";
+    font-size: 0.7em;
+    margin: 31px 55px 0 0;
+    transition: 0.5s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+      color: lightgrey;
+    }
+  }
 }
