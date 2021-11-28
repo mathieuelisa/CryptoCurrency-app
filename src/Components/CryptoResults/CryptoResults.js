@@ -1,11 +1,13 @@
+// Import Hooks
+import { useContext } from "react";
+// Import useContext
+import { DataApiContext } from "../Utils/DataContext";
+// Import styles
 import "./styles.scss";
 
 function CryptoResults() {
-  let numberResulat = 37838967;
-  // let result = numberResulat.toLocaleString();
-  let result = numberResulat.toLocaleString();
-
-  // const { count, setCount, count2, setCount2 } = useContext(CountContext);
+  const result = useContext(DataApiContext);
+  console.log("damn" + result);
 
   return (
     <div className="crypto__container--results">

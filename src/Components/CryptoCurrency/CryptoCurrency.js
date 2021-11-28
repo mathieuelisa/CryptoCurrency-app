@@ -3,13 +3,16 @@ import "./styles.scss";
 // Import Components
 import Input from "../StyledComponents/Input";
 import CryptoResults from "../CryptoResults/CryptoResults";
-
+// Import Hooks
 import { useState } from "react";
-
+// Import axios
 import axios from "axios";
+// Import useContext
+import { DataApiContext } from "../Utils/DataContext";
 
 function CryptoCurrency() {
   const [exchangeValue, setExchangeValue] = useState(0);
+
   const [state, setState] = useState({
     primary: "",
     secondary: "",
@@ -82,7 +85,6 @@ function CryptoCurrency() {
           classNameInput="crypto__container--currency-input"
         />
       </div>
-
       <div className="crypto__container--currency-second">
         <Input
           title="SECONDARY CURRENCY"
@@ -95,7 +97,6 @@ function CryptoCurrency() {
           classNameInput="crypto__container--currency-input"
         />
       </div>
-
       <div className="crypto__container--currency-third">
         <button
           onClick={exchange}
@@ -105,9 +106,9 @@ function CryptoCurrency() {
         </button>
       </div>
 
-      {/* Put the provider here */}
-      {/* <CountContext.Provider value={{ count, setCount, count2, setCount2 }}> */}
-      <CryptoResults />
+      <DataApiContext.Provider value={"TEST USE CONTEXT"}>
+        <CryptoResults />
+      </DataApiContext.Provider>
     </div>
   );
 }
