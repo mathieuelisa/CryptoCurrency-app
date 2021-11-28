@@ -2,13 +2,14 @@
 import "./styles.scss";
 // Import Components
 import Input from "../StyledComponents/Input";
+import CryptoResults from "../CryptoResults/CryptoResults";
 
 import { useState } from "react";
 
 import axios from "axios";
 
 function CryptoCurrency() {
-  // const [dataApi, setDataApi] = useState([]);
+  const [exchangeValue, setExchangeValue] = useState(0);
   const [state, setState] = useState({
     primary: "",
     secondary: "",
@@ -27,7 +28,6 @@ function CryptoCurrency() {
       [e.target.name]: value,
     });
   };
-  console.log(state);
 
   const onChangeCurrencies = (e) => {
     const currencyValue = e.target.value;
@@ -38,16 +38,16 @@ function CryptoCurrency() {
     });
   };
 
-  console.log(currency);
+  console.log(currency.firstCurrency);
 
   const exchange = () => {
     var options = {
       method: "GET",
       url: "https://alpha-vantage.p.rapidapi.com/query",
       params: {
-        to_currency: "JPY",
+        to_currency: currency.secondCurrency,
         function: "CURRENCY_EXCHANGE_RATE",
-        from_currency: "USD",
+        from_currency: currency.firstCurrency,
       },
       headers: {
         "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
@@ -59,9 +59,14 @@ function CryptoCurrency() {
       .request(options)
       .then((response) => {
         console.log(response.data);
+        setExchangeValue(
+          response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
+        );
       })
       .catch((error) => console.error(error));
   };
+
+  console.log("This is your value " + exchangeValue);
 
   return (
     <div className="crypto__container--currency">
@@ -99,6 +104,10 @@ function CryptoCurrency() {
           Exchange
         </button>
       </div>
+
+      {/* Put the provider here */}
+      {/* <CountContext.Provider value={{ count, setCount, count2, setCount2 }}> */}
+      <CryptoResults />
     </div>
   );
 }
