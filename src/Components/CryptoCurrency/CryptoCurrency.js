@@ -8,10 +8,11 @@ import { useState } from "react";
 // Import axios
 import axios from "axios";
 // Import useContext
-import { DataApiContext } from "../Utils/DataContext";
+import { DataApiContext } from "../Context/DataContext";
 
 function CryptoCurrency() {
   const [exchangeValue, setExchangeValue] = useState(0);
+  const [result, setResult] = useState(0);
 
   const [state, setState] = useState({
     primary: "",
@@ -41,16 +42,14 @@ function CryptoCurrency() {
     });
   };
 
-  console.log(currency.firstCurrency);
-
   const exchange = () => {
     var options = {
       method: "GET",
       url: "https://alpha-vantage.p.rapidapi.com/query",
       params: {
-        to_currency: currency.secondCurrency,
-        function: "CURRENCY_EXCHANGE_RATE",
         from_currency: currency.firstCurrency,
+        function: "CURRENCY_EXCHANGE_RATE",
+        to_currency: currency.secondCurrency,
       },
       headers: {
         "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
@@ -65,11 +64,13 @@ function CryptoCurrency() {
         setExchangeValue(
           response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
         );
+        setResult(
+          response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] *
+            state.primary
+        );
       })
       .catch((error) => console.error(error));
   };
-
-  console.log("This is your value " + exchangeValue);
 
   return (
     <div className="crypto__container--currency">
@@ -85,6 +86,19 @@ function CryptoCurrency() {
           classNameInput="crypto__container--currency-input"
         />
       </div>
+
+      {!state.primary ? (
+        <div className="crypto__container--currency-notifDiv">
+          <p className="crypto__container--currency-notifications">
+            Enter a value
+          </p>
+        </div>
+      ) : (
+        <>
+          <p>""</p>
+        </>
+      )}
+
       <div className="crypto__container--currency-second">
         <Input
           title="SECONDARY CURRENCY"
@@ -106,7 +120,7 @@ function CryptoCurrency() {
         </button>
       </div>
 
-      <DataApiContext.Provider value={"TEST USE CONTEXT"}>
+      <DataApiContext.Provider value={result.toLocaleString()}>
         <CryptoResults />
       </DataApiContext.Provider>
     </div>

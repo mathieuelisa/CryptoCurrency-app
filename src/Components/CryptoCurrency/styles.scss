@@ -1,8 +1,3 @@
-// @font-face {
-//   font-family: "Gobold";
-//   src: url("../../Assets/Fonts/Gobold.otf");
-// }
-
 .crypto__container--currency {
   display: flex;
   flex-direction: column;
@@ -33,6 +28,18 @@
     border: none;
     margin: 15px 0 0 0;
     cursor: pointer;
+  }
+
+  &-notifDiv {
+    width: 265px;
+    margin: 4px;
+  }
+
+  &-notifications {
+    font-family: "Gobold";
+    color: whitesmoke;
+    font-size: 0.6em;
+    width: 120px;
   }
 
   select {

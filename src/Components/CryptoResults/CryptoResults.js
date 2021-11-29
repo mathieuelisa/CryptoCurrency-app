@@ -1,13 +1,12 @@
 // Import Hooks
 import { useContext } from "react";
 // Import useContext
-import { DataApiContext } from "../Utils/DataContext";
+import { DataApiContext } from "../Context/DataContext";
 // Import styles
 import "./styles.scss";
 
 function CryptoResults() {
   const result = useContext(DataApiContext);
-  console.log("damn" + result);
 
   return (
     <div className="crypto__container--results">
