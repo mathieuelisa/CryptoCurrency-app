@@ -11,7 +11,6 @@ import axios from "axios";
 import { DataApiContext } from "../Context/DataContext";
 
 function CryptoCurrency() {
-  const [exchangeValue, setExchangeValue] = useState(0);
   const [result, setResult] = useState(0);
 
   const [state, setState] = useState({
@@ -42,8 +41,9 @@ function CryptoCurrency() {
     });
   };
 
+  // API to get exchange currency
   const exchange = () => {
-    var options = {
+    const options = {
       method: "GET",
       url: "https://alpha-vantage.p.rapidapi.com/query",
       params: {
@@ -61,9 +61,6 @@ function CryptoCurrency() {
       .request(options)
       .then((response) => {
         console.log(response.data);
-        setExchangeValue(
-          response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
-        );
         setResult(
           response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] *
             state.primary

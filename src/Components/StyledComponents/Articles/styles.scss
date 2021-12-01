@@ -1,0 +1,14 @@
+.articles__config {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &-title {
+    color: whitesmoke;
+    font-family: "Gobold";
+    margin: 20px;
+  }
+  &-img {
+    height: 150px;
+    margin: 20px;
+  }
+}

@@ -11,6 +11,7 @@ function Input({
   classNameInput,
 }) {
   const currencies = [
+    "Select a value",
     "BTC",
     "LTC",
     "ETH",
