@@ -73,6 +73,8 @@ function CryptoCurrency() {
       .catch((error) => console.error(error));
   };
 
+  console.log("result: " + result);
+
   return (
     <div className="crypto__container--currency">
       <div className="crypto__container--currency-first">

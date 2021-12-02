@@ -1,14 +1,23 @@
 import "./styles.scss";
 
-function Articles({ img, title }) {
+function Articles({ img, title, onClick, link }) {
   return (
     <div className="articles__config">
       <img
         className="articles__config-img"
         src={img}
         alt={"pictures of article"}
+        onClick={onClick}
       />
-      <h4 className="articles__config-title">{title}</h4>
+      <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        className="articles__config-title"
+        onClick={onClick}
+      >
+        {title}
+      </a>
     </div>
   );
 }

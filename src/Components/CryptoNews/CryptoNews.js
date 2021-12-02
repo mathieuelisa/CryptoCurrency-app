@@ -34,6 +34,12 @@ function CryptoNews() {
       .catch((error) => console.log(error));
   }, []);
 
+  console.log(articles);
+
+  const selectArticle = () => {
+    console.log("pipo");
+  };
+
   return (
     <>
       <div className="crypto__header">
@@ -56,6 +62,8 @@ function CryptoNews() {
                 key={index}
                 img={article.articleImage}
                 title={article.articleTitle}
+                onClick={selectArticle}
+                link={article.articleUrl}
               />
             );
           })
