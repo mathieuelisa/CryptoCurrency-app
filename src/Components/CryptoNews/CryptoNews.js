@@ -6,12 +6,15 @@ import { useState } from "react/cjs/react.development";
 import Articles from "../StyledComponents/Articles";
 // Import styles
 import "./styles.scss";
+import loader from "../../Assets/Images/spinner.gif";
 
 // API to get new articles about Crypto
 function CryptoNews() {
+  const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     const options = {
       method: "GET",
       url: "https://latest-crypto-news.p.rapidapi.com/newsbtc/crypto/latest",
@@ -25,6 +28,7 @@ function CryptoNews() {
       .request(options)
       .then((response) => {
         setArticles(response.data);
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -33,15 +37,23 @@ function CryptoNews() {
     <>
       <h1 className="crypto__container--containerNews-title">News page</h1>
       <div className="crypto__container--containerNews">
-        {articles.map((article, index) => {
-          return (
-            <Articles
-              key={index}
-              img={article.articleImage}
-              title={article.articleTitle}
-            />
-          );
-        })}
+        {loading ? (
+          <img
+            className="crypto__container--containerNews-loading"
+            src={loader}
+            alt="loading pictures"
+          />
+        ) : (
+          articles.map((article, index) => {
+            return (
+              <Articles
+                key={index}
+                img={article.articleImage}
+                title={article.articleTitle}
+              />
+            );
+          })
+        )}
       </div>
     </>
   );
