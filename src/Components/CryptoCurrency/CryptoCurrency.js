@@ -9,10 +9,12 @@ import { useState } from "react";
 import axios from "axios";
 // Import useContext
 import { DataApiContext } from "../Context/DataContext";
+// Import Loading
+import loader from "../../Assets/Images/spinner.gif";
 
 function CryptoCurrency() {
   const [result, setResult] = useState(0);
-
+  const [loading, setLoading] = useState(false);
   const [state, setState] = useState({
     primary: "",
     secondary: "",
@@ -43,6 +45,7 @@ function CryptoCurrency() {
 
   // API to get exchange currency
   const exchange = () => {
+    setLoading(true);
     const options = {
       method: "GET",
       url: "https://alpha-vantage.p.rapidapi.com/query",
@@ -65,6 +68,7 @@ function CryptoCurrency() {
           response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] *
             state.primary
         );
+        setLoading(false);
       })
       .catch((error) => console.error(error));
   };
@@ -118,7 +122,17 @@ function CryptoCurrency() {
       </div>
 
       <DataApiContext.Provider value={result.toLocaleString()}>
-        <CryptoResults />
+        {loading ? (
+          <div className="crypto__container--results">
+            <img
+              className="crypto__container--results-loading"
+              src={loader}
+              alt="loading"
+            />
+          </div>
+        ) : (
+          <CryptoResults />
+        )}
       </DataApiContext.Provider>
     </div>
   );
