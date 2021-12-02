@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 // Import Components
 import Articles from "../StyledComponents/Articles";
+import Header from "../StyledComponents/Header";
 // Import styles
 import "./styles.scss";
 import loader from "../../Assets/Images/spinner.gif";
@@ -35,7 +36,12 @@ function CryptoNews() {
 
   return (
     <>
-      <h1 className="crypto__container--containerNews-title">News page</h1>
+      <div className="crypto__header">
+        <Header />
+      </div>
+      <div className="crypto__header__container">
+        <h1 className="crypto__container--containerNews-title">News page</h1>
+      </div>
       <div className="crypto__container--containerNews">
         {loading ? (
           <img

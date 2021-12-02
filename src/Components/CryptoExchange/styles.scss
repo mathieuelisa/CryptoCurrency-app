@@ -3,14 +3,16 @@
   flex-direction: column;
   justify-content: center;
   height: 420px;
-  width: 57%;
+  width: 100%;
 
   &--news {
+    position: absolute;
+    bottom: 162px;
+    right: 350px;
     color: whitesmoke;
-    text-align: end;
     font-family: "Gobold";
     font-size: 0.7em;
-    margin: 31px 55px 0 0;
+    margin: 30px 0px 0 0;
     transition: 0.5s ease-in-out;
     text-decoration: none;
 
@@ -18,4 +20,10 @@
       color: lightgrey;
     }
   }
+}
+
+.crypto__header {
+  position: absolute;
+  top: 35px;
+  left: 45px;
 }

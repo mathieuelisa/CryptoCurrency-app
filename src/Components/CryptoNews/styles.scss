@@ -10,13 +10,18 @@
     &-title {
       color: whitesmoke;
       font-family: "Gobold";
-      margin-right: 15px;
+      width: 138px;
     }
 
     &-loading {
       height: 90px;
     }
   }
+}
+
+.crypto__header__container {
+  text-align: center;
+  margin: 0 auto;
 }
 
 // Custom scrollbar
