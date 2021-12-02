@@ -1,6 +1,6 @@
 import axios from "axios";
 // Import Hooks
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react/cjs/react.development";
 // Import Components
 import Articles from "../StyledComponents/Articles";
@@ -8,11 +8,30 @@ import Header from "../StyledComponents/Header";
 // Import styles
 import "./styles.scss";
 import loader from "../../Assets/Images/spinner.gif";
+import Transition from "../StyledComponents/Transitions";
+
+import gsap from "gsap";
 
 // API to get new articles about Crypto
 function CryptoNews() {
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
+
+  const cryptoNews = gsap.timeline();
+  const cryptoNewsTitle = useRef(null);
+
+  useEffect(() => {
+    cryptoNews.from(
+      cryptoNewsTitle.current,
+      {
+        duration: 2,
+        skewX: 10,
+        y: -50,
+        opacity: 0,
+      },
+      "-=3.5s"
+    );
+  });
 
   useEffect(() => {
     setLoading(true);
@@ -42,11 +61,17 @@ function CryptoNews() {
 
   return (
     <>
+      <Transition timeline={cryptoNews} />
       <div className="crypto__header">
         <Header />
       </div>
       <div className="crypto__header__container">
-        <h1 className="crypto__container--containerNews-title">News page</h1>
+        <h1
+          className="crypto__container--containerNews-title"
+          timeline={cryptoNewsTitle}
+        >
+          News page
+        </h1>
       </div>
       <div className="crypto__container--containerNews">
         {loading ? (
