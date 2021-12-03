@@ -63,7 +63,6 @@ function CryptoCurrency() {
     axios
       .request(options)
       .then((response) => {
-        console.log(response.data);
         setResult(
           response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] *
             state.primary
@@ -72,8 +71,6 @@ function CryptoCurrency() {
       })
       .catch((error) => console.error(error));
   };
-
-  console.log("result: " + result);
 
   return (
     <div className="crypto__container--currency">

@@ -28,6 +28,11 @@
     border: none;
     margin: 15px 0 0 0;
     cursor: pointer;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      color: lightgrey;
+    }
   }
 
   &-notifDiv {
@@ -36,7 +41,7 @@
   }
 
   &-notifications {
-    font-family: "Gobold";
+    font-family: arial;
     color: whitesmoke;
     font-size: 0.6em;
     width: 120px;

@@ -52,8 +52,6 @@ function CryptoNews() {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(articles);
-
   return (
     <>
       <Transition timeline={cryptoNews} />

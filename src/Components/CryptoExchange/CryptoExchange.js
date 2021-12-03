@@ -7,7 +7,6 @@ import Transition from "../StyledComponents/Transitions";
 
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-// import { useRef } from "react/cjs/react.development";
 
 function CryptoExchange() {
   const cryptoNews = gsap.timeline();

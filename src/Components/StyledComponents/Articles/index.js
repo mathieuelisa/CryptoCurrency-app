@@ -1,3 +1,4 @@
+// Import styles
 import "./styles.scss";
 
 function Articles({ img, title, onClick, link }) {

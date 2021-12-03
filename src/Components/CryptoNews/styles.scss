@@ -18,6 +18,10 @@
 
     &-loading {
       height: 90px;
+      position: relative;
+      height: 90px;
+      top: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -43,5 +47,11 @@
 
   &:hover {
     background: #0d052c;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .crypto__container--containerNews-title {
+    font-size: 6em;
   }
 }
