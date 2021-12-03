@@ -21,15 +21,14 @@ function CryptoNews() {
   const cryptoNewsTitle = useRef(null);
 
   useEffect(() => {
-    cryptoNews.from(
+    cryptoNews.to(
       cryptoNewsTitle.current,
       {
-        duration: 2,
-        skewX: 10,
+        duration: 3,
         y: -50,
-        opacity: 0,
+        opacity: 1,
       },
-      "-=3.5s"
+      "-=0.5s"
     );
   });
 
@@ -55,10 +54,6 @@ function CryptoNews() {
 
   console.log(articles);
 
-  const selectArticle = () => {
-    console.log("pipo");
-  };
-
   return (
     <>
       <Transition timeline={cryptoNews} />
@@ -68,7 +63,7 @@ function CryptoNews() {
       <div className="crypto__header__container">
         <h1
           className="crypto__container--containerNews-title"
-          timeline={cryptoNewsTitle}
+          ref={cryptoNewsTitle}
         >
           News page
         </h1>
@@ -87,7 +82,6 @@ function CryptoNews() {
                 key={index}
                 img={article.articleImage}
                 title={article.articleTitle}
-                onClick={selectArticle}
                 link={article.articleUrl}
               />
             );
