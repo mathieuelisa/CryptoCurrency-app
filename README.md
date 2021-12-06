@@ -13,7 +13,11 @@ For use this app select the currency and click on "Exchange".
 
 ## To start the app
 
-Install all the packages with `yarn install`
+Install all the packages with
+
+```bash
+yarn install
+```
 
 ### `yarn start`
 

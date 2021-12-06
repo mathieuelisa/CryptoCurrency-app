@@ -10,9 +10,9 @@ function Transition({ timeline }) {
 
   useEffect(() => {
     timeline.to(transition.current, {
-      duration: 3,
+      duration: 1.5,
       x: 1540,
-      ease: Expo.easeOut,
+      ease: Expo.easeInOut,
     });
   });
 
