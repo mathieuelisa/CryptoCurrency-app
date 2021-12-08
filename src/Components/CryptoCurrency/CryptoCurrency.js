@@ -115,12 +115,15 @@ function CryptoCurrency() {
         </button>
       </div>
 
-      <DataApiContext.Provider
+      {/* A voir avec cryptoResult pour afficher la currency dans le result */}
+      {/* <DataApiContext.Provider
         value={{
           result: [result, setResult],
           currency: [currency.secondCurrency, setCurrency],
         }}
-      >
+      > */}
+
+      <DataApiContext.Provider value={result}>
         {loading ? (
           <div className="crypto__container--results">
             <img
