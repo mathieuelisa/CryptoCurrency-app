@@ -52,6 +52,15 @@
 
 @media screen and (max-width: 1040px) {
   .crypto__container--containerNews-title {
-    font-size: 6em;
+    font-size: 4em;
+  }
+
+  .crypto__container--containerNews {
+    height: 75%;
+  }
+
+  .crypto__container--containerNews-title {
+    height: 280px;
+    width: 77px;
   }
 }
