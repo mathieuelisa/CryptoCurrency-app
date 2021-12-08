@@ -1,7 +1,5 @@
 import "./styles.scss";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// Import components
 import CryptoExchange from "../CryptoExchange/CryptoExchange";
 import CryptoNews from "../CryptoNews/CryptoNews";
 import Error from "../Error/Error";

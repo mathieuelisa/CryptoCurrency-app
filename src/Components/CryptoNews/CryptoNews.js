@@ -1,18 +1,13 @@
-import axios from "axios";
-// Import Hooks
+import "./styles.scss";
 import { useEffect, useRef } from "react";
 import { useState } from "react/cjs/react.development";
-// Import Components
+import axios from "axios";
 import Articles from "../StyledComponents/Articles";
 import Header from "../StyledComponents/Header";
-// Import styles
-import "./styles.scss";
 import loader from "../../Assets/Images/spinner.gif";
 import Transition from "../StyledComponents/Transitions";
-
 import gsap from "gsap";
 
-// API to get new articles about Crypto
 function CryptoNews() {
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);

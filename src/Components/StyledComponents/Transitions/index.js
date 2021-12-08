@@ -1,8 +1,6 @@
 // Import GSAP
 import { Expo } from "gsap";
-// Import styles
 import "./styles.scss";
-// Import Hooks
 import { useRef, useEffect } from "react";
 
 function Transition({ timeline }) {

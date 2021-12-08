@@ -1,15 +1,9 @@
-// Import styles
 import "./styles.scss";
-// Import Components
+import { useState } from "react";
+import { DataApiContext } from "../Context/DataContext";
 import Input from "../StyledComponents/Input";
 import CryptoResults from "../CryptoResults/CryptoResults";
-// Import Hooks
-import { useState } from "react";
-// Import axios
 import axios from "axios";
-// Import useContext
-import { DataApiContext } from "../Context/DataContext";
-// Import Loading
 import loader from "../../Assets/Images/spinner.gif";
 
 function CryptoCurrency() {
@@ -109,6 +103,7 @@ function CryptoCurrency() {
           currenciesName="secondCurrency"
           onChangeCurrencies={onChangeCurrencies}
           classNameInput="crypto__container--currency-input"
+          disabled={true}
         />
       </div>
       <div className="crypto__container--currency-third">
@@ -120,7 +115,12 @@ function CryptoCurrency() {
         </button>
       </div>
 
-      <DataApiContext.Provider value={result.toLocaleString()}>
+      <DataApiContext.Provider
+        value={{
+          result: [result, setResult],
+          currency: [currency.secondCurrency, setCurrency],
+        }}
+      >
         {loading ? (
           <div className="crypto__container--results">
             <img

@@ -1,19 +1,17 @@
 // Import styles
 import "./styles.scss";
-// Import Components
 import CryptoCurrency from "../CryptoCurrency/CryptoCurrency";
 import Header from "../StyledComponents/Header";
 import Transition from "../StyledComponents/Transitions";
-
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 function CryptoExchange() {
-  const cryptoNews = gsap.timeline();
+  const cryptoCurrency = gsap.timeline();
 
   return (
     <>
-      <Transition timeline={cryptoNews} />
+      <Transition timeline={cryptoCurrency} />
       <div className="crypto__header">
         <Header />
       </div>

@@ -9,17 +9,19 @@ function Input({
   currenciesName,
   onChangeCurrencies,
   classNameInput,
+  disabled,
 }) {
   const currencies = [
     "Select a value",
     "BTC",
-    "LTC",
     "ETH",
-    "SHIB",
     "SOL",
     "ADA",
+    "LTC",
+    "BNB",
+    "XRP",
     "DOGE",
-    "XMR",
+    "SHIB",
     "EUR",
     "USD",
     "JPY",
@@ -35,6 +37,7 @@ function Input({
           onChange={onChange}
           name={name}
           className={classNameInput}
+          disabled={disabled}
         />
       </label>
       <select

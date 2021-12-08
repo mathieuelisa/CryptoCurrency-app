@@ -1,5 +1,7 @@
 .crypto__container {
   display: flex;
+  position: relative;
+  top: 30px;
   flex-direction: column;
   justify-content: center;
   height: 420px;
