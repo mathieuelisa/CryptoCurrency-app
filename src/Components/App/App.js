@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CryptoExchange from "../CryptoExchange/CryptoExchange";
 import CryptoNews from "../CryptoNews/CryptoNews";
 import Error from "../Error/Error";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
