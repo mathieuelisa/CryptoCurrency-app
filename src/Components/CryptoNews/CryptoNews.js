@@ -1,11 +1,10 @@
 import "./styles.scss";
-import { useEffect, useRef } from "react";
-import { useState } from "react/cjs/react.development";
-import axios from "axios";
+import { useEffect, useRef, useState } from "react";
 import Articles from "../StyledComponents/Articles";
 import Header from "../StyledComponents/Header";
 import loader from "../../Assets/Images/spinner.gif";
 import Transition from "../StyledComponents/Transitions";
+import axios from "axios";
 import gsap from "gsap";
 
 function CryptoNews() {
