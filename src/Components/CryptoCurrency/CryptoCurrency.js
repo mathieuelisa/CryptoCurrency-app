@@ -7,7 +7,7 @@ import axios from "axios";
 import loader from "../../Assets/Images/spinner.gif";
 
 function CryptoCurrency() {
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [state, setState] = useState({
     primary: "",
@@ -89,7 +89,7 @@ function CryptoCurrency() {
         </div>
       ) : (
         <>
-          <p>""</p>
+          <p></p>
         </>
       )}
 
@@ -119,7 +119,7 @@ function CryptoCurrency() {
       {/* <DataApiContext.Provider
         value={{
           result: [result, setResult],
-          currency: [currency.secondCurrency, setCurrency],
+          currency: [currency, setCurrency],
         }}
       > */}
 
