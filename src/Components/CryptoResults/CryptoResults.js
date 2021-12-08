@@ -9,6 +9,7 @@ function CryptoResults() {
   // const [myCurrency, setMyCurrency] = useState(currency);
 
   const result = useContext(DataApiContext);
+
   return (
     <div className="crypto__container--results">
       <h3 className="crypto__container--results-number">{result}</h3>

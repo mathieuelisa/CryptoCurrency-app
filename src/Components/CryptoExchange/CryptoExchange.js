@@ -17,8 +17,8 @@ function CryptoExchange() {
       </div>
       <div className="crypto__container">
         <CryptoCurrency />
-        <Link to="/news" className="crypto__container--news">
-          Get news about crypto ?{" "}
+        <Link to="news" className="crypto__container--news">
+          Get news about crypto
         </Link>
       </div>
     </>

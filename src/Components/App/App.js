@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CryptoExchange />} />
-          <Route path="/news" element={<CryptoNews />} />
+          <Route path="news" element={<CryptoNews />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
