@@ -30,9 +30,9 @@ function CryptoNews() {
     setLoading(true);
     const options = {
       method: "GET",
-      url: "https://latest-crypto-news.p.rapidapi.com/newsbtc/crypto/latest",
+      url: "https://crypto-news15.p.rapidapi.com/news/amb",
       headers: {
-        "x-rapidapi-host": "latest-crypto-news.p.rapidapi.com",
+        "x-rapidapi-host": "crypto-news15.p.rapidapi.com",
         "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
       },
     };
@@ -72,9 +72,9 @@ function CryptoNews() {
             return (
               <Articles
                 key={index}
-                img={article.articleImage}
-                title={article.articleTitle}
-                link={article.articleUrl}
+                // img={article.articleImage}
+                title={article.title}
+                link={article.url}
               />
             );
           })
