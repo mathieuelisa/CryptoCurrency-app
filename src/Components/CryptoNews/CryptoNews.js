@@ -70,12 +70,7 @@ function CryptoNews() {
         ) : (
           articles.map((article, index) => {
             return (
-              <Articles
-                key={index}
-                // img={article.articleImage}
-                title={article.title}
-                link={article.url}
-              />
+              <Articles key={index} title={article.title} link={article.url} />
             );
           })
         )}

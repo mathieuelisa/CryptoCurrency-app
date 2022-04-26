@@ -9,7 +9,7 @@ function Transition({ timeline }) {
   useEffect(() => {
     timeline.to(transition.current, {
       duration: 1.5,
-      x: 1540,
+      x: 3040,
       ease: Expo.easeInOut,
     });
   });
